@@ -20,18 +20,21 @@ This project demonstrates my ability to architect and build scalable, maintainab
 ## ✨ Key Features
 
 ### Product Management
+
 - ✅ Full CRUD operations with optimistic updates
 - ✅ Real-time table with pagination and filtering
 - ✅ Form validation using React Hook Form + Zod
 - ✅ Confirmation dialogs for destructive actions
 
 ### Order Management
+
 - ✅ Order listing with status tracking
 - ✅ Detailed order view with line items
 - ✅ Status workflow management (Pending → Processing → Shipped → Delivered)
 - ✅ Customer information display
 
 ### Dashboard Analytics
+
 - ✅ Revenue tracking
 - ✅ Order statistics
 - ✅ Customer metrics
@@ -42,18 +45,21 @@ This project demonstrates my ability to architect and build scalable, maintainab
 ## 🏗️ Technical Highlights
 
 ### Architecture & Design Patterns
+
 - **Layered Architecture:** Clear separation between UI, state, services, and data layers
 - **Server-First:** Leverages Next.js App Router with minimal client components
 - **Type Safety:** End-to-end TypeScript with Zod schemas for runtime validation
 - **State Management:** Redux Toolkit for global state, React Hook Form for local form state
 
 ### Code Quality
+
 - **Clean Code:** Strict ESLint rules, Prettier formatting, no relative imports
 - **Type Safety:** No `any` types, full TypeScript coverage
 - **Scalable Structure:** Domain-driven folder organization
 - **Performance:** Server components by default, optimized database queries with Promise.all
 
 ### Custom Material UI Theme
+
 - Custom color palette and typography
 - Component-level overrides (Button, Table, Chip, Card, Dialog)
 - Consistent design system throughout the application
@@ -64,6 +70,7 @@ This project demonstrates my ability to architect and build scalable, maintainab
 ## 🛠️ Tech Stack
 
 **Frontend**
+
 - Next.js 15 (App Router)
 - TypeScript (strict mode)
 - Material UI v7 (fully customized)
@@ -71,12 +78,14 @@ This project demonstrates my ability to architect and build scalable, maintainab
 - React Hook Form + Zod
 
 **Backend**
+
 - Next.js Route Handlers (REST API)
 - Prisma ORM
 - PostgreSQL
 - Server-side data fetching
 
 **Developer Tools**
+
 - ESLint (strict configuration)
 - Prettier
 - Git hooks (pre-commit)
@@ -123,6 +132,7 @@ src/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js 18+
 - PostgreSQL database
 - npm or yarn
@@ -130,29 +140,34 @@ src/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Habil99/ecommerce-dashboard.git
    cd ecommerce-dashboard
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Setup environment variables**
+
    ```bash
    cp .env.example .env
    # Add your DATABASE_URL
    ```
 
 4. **Setup database**
+
    ```bash
    npx prisma migrate dev
    npx prisma db seed
    ```
 
 5. **Run development server**
+
    ```bash
    npm run dev
    ```
@@ -167,21 +182,25 @@ src/
 ## 🎨 Design Decisions
 
 ### Why Next.js App Router?
+
 - Server-first architecture for better performance
 - Built-in API routes for full-stack development
 - Excellent TypeScript support
 
 ### Why Redux Toolkit?
+
 - Predictable state management for entity collections
 - Async data fetching with thunks
 - DevTools integration for debugging
 
 ### Why Material UI?
+
 - Enterprise-grade component library
 - Highly customizable theming system
 - Accessible components out of the box
 
 ### Why Prisma?
+
 - Type-safe database queries
 - Easy migrations and schema management
 - Excellent TypeScript integration
@@ -213,10 +232,9 @@ If this were a production application, I would add:
 
 I'm Habil Abiyev, a senior frontend engineer specializing in React, Next.js, and TypeScript. I focus on building scalable, maintainable applications with clean architecture and excellent developer experience.
 
-- **Portfolio:** [habilabiyev.dev](#)
 - **LinkedIn:** [linkedin.com/in/habilabiyev](#)
 - **GitHub:** [github.com/Habil99](https://github.com/Habil99)
-- **Email:** [your.email@example.com](#)
+- **Email:** [habil.abiyev.dev@gmail.com](#)
 
 ---
 

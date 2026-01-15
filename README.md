@@ -1,252 +1,229 @@
-E-commerce Admin Dashboard
+# E-commerce Admin Dashboard
 
-A production-style E-commerce Admin Dashboard built with Next.js App Router, Material UI, and Redux Toolkit, designed as a portfolio project to demonstrate senior-level frontend architecture, enterprise UI customization, and clean state management.
+A modern, full-stack admin dashboard showcasing enterprise-level architecture, clean code practices, and production-ready patterns. Built to demonstrate senior frontend engineering capabilities with Next.js, TypeScript, and Material UI.
 
-This project intentionally focuses on code quality, structure, and architectural decisions rather than feature completeness.
+**Live Demo:** [View Demo](#) | **Portfolio:** [habilabiyev.dev](#)
 
-⸻
+---
 
-✨ Key Characteristics
-• Server-first Next.js architecture
-• Minimal and intentional usage of "use client"
-• Fully customized Material UI theme (not default MUI)
-• Redux Toolkit used as a coordination layer, not a dumping ground
-• Real backend with Next.js Route Handlers
-• Strict ESLint + Prettier
-• Testable components and predictable data flow
+## 🎯 Project Overview
 
-⸻
+This project demonstrates my ability to architect and build scalable, maintainable admin applications with:
 
-🧱 Tech Stack
+- **Modern Stack:** Next.js 15 App Router, TypeScript, Material UI, Redux Toolkit
+- **Full-Stack Implementation:** REST APIs, PostgreSQL database, Prisma ORM
+- **Enterprise Patterns:** Layered architecture, type-safe APIs, form validation
+- **Production Quality:** ESLint, Prettier, proper state management, responsive design
 
-Frontend
-• Next.js (App Router)
-• TypeScript (strict)
-• Material UI (MUI v5) – fully customized
-• Redux Toolkit
-• React Hook Form + Zod
+---
 
-Backend
-• Next.js Route Handlers
-• REST APIs
-• Prisma ORM
-• PostgreSQL
+## ✨ Key Features
 
-Tooling
-• ESLint (strict rules)
-• Prettier
-• Absolute imports only
-• Jest / Vitest + React Testing Library
+### Product Management
+- ✅ Full CRUD operations with optimistic updates
+- ✅ Real-time table with pagination and filtering
+- ✅ Form validation using React Hook Form + Zod
+- ✅ Confirmation dialogs for destructive actions
 
-⸻
+### Order Management
+- ✅ Order listing with status tracking
+- ✅ Detailed order view with line items
+- ✅ Status workflow management (Pending → Processing → Shipped → Delivered)
+- ✅ Customer information display
 
-🏗️ Architecture Overview
+### Dashboard Analytics
+- ✅ Revenue tracking
+- ✅ Order statistics
+- ✅ Customer metrics
+- ✅ Product inventory overview
 
-This project intentionally uses a layered architecture, commonly found in large enterprise admin systems.
+---
 
-UI (MUI components)
-↓
-Pages / Containers
-↓
-Redux Store (Slices + Thunks)
-↓
-Service Layer (HTTP)
-↓
-Backend (Route Handlers)
-↓
-Database (Prisma + PostgreSQL)
+## 🏗️ Technical Highlights
 
-Why layered architecture?
-• Scales well with large teams
-• Keeps UI clean and testable
-• Makes Redux usage predictable
-• Clearly separates business concepts from UI concerns
+### Architecture & Design Patterns
+- **Layered Architecture:** Clear separation between UI, state, services, and data layers
+- **Server-First:** Leverages Next.js App Router with minimal client components
+- **Type Safety:** End-to-end TypeScript with Zod schemas for runtime validation
+- **State Management:** Redux Toolkit for global state, React Hook Form for local form state
 
-This contrasts with the feature-oriented architecture used in the Airbnb Admin project, demonstrating architectural breadth.
+### Code Quality
+- **Clean Code:** Strict ESLint rules, Prettier formatting, no relative imports
+- **Type Safety:** No `any` types, full TypeScript coverage
+- **Scalable Structure:** Domain-driven folder organization
+- **Performance:** Server components by default, optimized database queries with Promise.all
 
-⸻
+### Custom Material UI Theme
+- Custom color palette and typography
+- Component-level overrides (Button, Table, Chip, Card, Dialog)
+- Consistent design system throughout the application
+- Responsive layout with mobile support
 
-📁 Folder Structure
+---
 
+## 🛠️ Tech Stack
+
+**Frontend**
+- Next.js 15 (App Router)
+- TypeScript (strict mode)
+- Material UI v7 (fully customized)
+- Redux Toolkit
+- React Hook Form + Zod
+
+**Backend**
+- Next.js Route Handlers (REST API)
+- Prisma ORM
+- PostgreSQL
+- Server-side data fetching
+
+**Developer Tools**
+- ESLint (strict configuration)
+- Prettier
+- Git hooks (pre-commit)
+
+---
+
+## 📂 Project Structure
+
+```
 src/
 ├── app/
-│ ├── (dashboard)/
-│ │ ├── dashboard/page.tsx
-│ │ ├── products/page.tsx
-│ │ ├── orders/page.tsx
-│ │ └── customers/page.tsx
-│ │
-│ ├── api/
-│ │ ├── products/
-│ │ ├── orders/
-│ │ ├── customers/
-│ │ └── stats/
-│ │
-│ └── layout.tsx
+│   ├── (dashboard)/          # Dashboard pages
+│   │   ├── dashboard/        # Analytics page
+│   │   ├── products/         # Product management
+│   │   └── orders/           # Order management
+│   └── api/                  # REST API routes
+│       ├── products/         # Product CRUD endpoints
+│       ├── orders/           # Order endpoints
+│       └── stats/            # Dashboard statistics
 │
-├── presentation/
-│ ├── components/
-│ │ ├── tables/
-│ │ ├── forms/
-│ │ ├── dialogs/
-│ │ └── layout/
-│ └── pages/
+├── presentation/             # UI layer
+│   ├── components/
+│   │   ├── tables/          # Data tables
+│   │   ├── dialogs/         # Modal dialogs
+│   │   ├── cards/           # Reusable cards
+│   │   └── layout/          # Layout components
 │
-├── store/
-│ ├── index.ts
-│ ├── hooks.ts
-│ ├── slices/
-│ └── thunks/
+├── store/                    # Redux store
+│   ├── slices/              # Redux slices
+│   └── hooks.ts             # Typed Redux hooks
 │
-├── domain/
-│ ├── product/
-│ ├── order/
-│ └── customer/
+├── domain/                   # Business logic
+│   ├── product/             # Product types & schemas
+│   ├── order/               # Order types & schemas
+│   └── customer/            # Customer types
 │
-├── services/
-│ ├── http.ts
-│ ├── products.service.ts
-│ └── orders.service.ts
-│
-├── theme/
-│ ├── palette.ts
-│ ├── typography.ts
-│ └── overrides.ts
-│
-├── utils/
-├── types/
-└── tests/
+├── services/                 # HTTP service layer
+├── theme/                    # MUI theme customization
+└── utils/                    # Shared utilities
+```
 
-⸻
+---
 
-🧠 Server-First Next.js Approach
+## 🚀 Getting Started
 
-This project is built with a server-first mindset:
+### Prerequisites
+- Node.js 18+
+- PostgreSQL database
+- npm or yarn
 
-Server Components by default
-• Pages fetch data on the server whenever possible
-• Tables and lists render server-side
-• Reduces client bundle size
-• Improves initial load performance
+### Installation
 
-Minimal "use client"
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Habil99/ecommerce-dashboard.git
+   cd ecommerce-dashboard
+   ```
 
-Client Components are used only when required, for example:
-• Forms (React Hook Form)
-• Interactive tables
-• Modals and dialogs
-• Redux store provider
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-This ensures:
-• Better performance
-• Cleaner component boundaries
-• Easier reasoning about data flow
+3. **Setup environment variables**
+   ```bash
+   cp .env.example .env
+   # Add your DATABASE_URL
+   ```
 
-⸻
+4. **Setup database**
+   ```bash
+   npx prisma migrate dev
+   npx prisma db seed
+   ```
 
-🎨 Material UI Customization
+5. **Run development server**
+   ```bash
+   npm run dev
+   ```
 
-This project does not use default MUI styles.
+6. **Open in browser**
+   ```
+   http://localhost:3000
+   ```
 
-Customizations include:
-• Custom color palette
-• Custom typography scale
-• Consistent border radius
-• Component overrides for:
-• Button
-• Table
-• Chip
-• Card
-• Dialog
+---
 
-createTheme({
-palette: customPalette,
-typography: customTypography,
-components: componentOverrides,
-})
+## 🎨 Design Decisions
 
-The goal is to demonstrate design system ownership, not just component usage.
+### Why Next.js App Router?
+- Server-first architecture for better performance
+- Built-in API routes for full-stack development
+- Excellent TypeScript support
 
-⸻
+### Why Redux Toolkit?
+- Predictable state management for entity collections
+- Async data fetching with thunks
+- DevTools integration for debugging
 
-🧠 Redux Toolkit Usage
+### Why Material UI?
+- Enterprise-grade component library
+- Highly customizable theming system
+- Accessible components out of the box
 
-Redux Toolkit is used intentionally and selectively.
+### Why Prisma?
+- Type-safe database queries
+- Easy migrations and schema management
+- Excellent TypeScript integration
 
-Redux owns:
-• Entity collections (products, orders, customers)
-• Cross-page filters
-• Loading and error states
-• Async lifecycle management
+---
 
-Redux does NOT own:
-• Form state
-• Local UI state
-• Modal visibility
-• One-off component interactions
+## 📸 Screenshots
 
-This avoids the common anti-pattern of over-centralized state.
+_Coming soon: Dashboard view, product table, order details_
 
-⸻
+---
 
-🔄 Data Flow
+## 🔮 Future Enhancements
 
-Page (Server Component)
-↓
-Redux Thunk (Client, when needed)
-↓
-Service Layer (HTTP)
-↓
-API Route Handler
-↓
-Prisma → PostgreSQL
+If this were a production application, I would add:
 
-All mutations are validated using Zod on the backend and reused on the frontend.
+- **Authentication & Authorization:** Role-based access control (RBAC)
+- **Advanced Filtering:** Multi-column filters, saved filter presets
+- **Data Export:** CSV/Excel export functionality
+- **Real-time Updates:** WebSocket integration for live data
+- **Internationalization:** Multi-language support
+- **Advanced Analytics:** Charts, graphs, and trend analysis
+- **Audit Logging:** Track all user actions
+- **Unit & E2E Tests:** Comprehensive test coverage
 
-⸻
+---
 
-🧪 Testing Strategy
+## 👤 About Me
 
-This project emphasizes testability.
+I'm Habil Abiyev, a senior frontend engineer specializing in React, Next.js, and TypeScript. I focus on building scalable, maintainable applications with clean architecture and excellent developer experience.
 
-Layer Test Type
-Presentation React Testing Library
-Redux Reducer & thunk tests
-Domain Zod schema validation
-Services HTTP mocks
+- **Portfolio:** [habilabiyev.dev](#)
+- **LinkedIn:** [linkedin.com/in/habilabiyev](#)
+- **GitHub:** [github.com/Habil99](https://github.com/Habil99)
+- **Email:** [your.email@example.com](#)
 
-No snapshot-only tests.
-Tests focus on behavior, not implementation details.
+---
 
-⸻
+## 📄 License
 
-📘 Code Quality Standards
-• Strict ESLint rules
-• Prettier for formatting
-• No relative imports (../../../)
-• No unused variables
-• No any
-• Clear naming everywhere
-• Predictable data flow
+This project is open source and available under the [MIT License](LICENSE).
 
-⸻
+---
 
-🚫 What This Project Intentionally Avoids
-• Mock data
-• Default MUI styling
-• Overusing "use client"
-• Over-engineering
-• Microservices
-• Complex auth flows
-
-This is a portfolio project, not a production SaaS.
-
-⸻
-
-🔮 What Would Be Added in Real Production
-• Authentication & authorization
-• Role-based access control
-• Audit logs
-• Advanced caching
-• Observability (metrics, tracing)
-• Internationalization
+**Built with ❤️ by Habil Abiyev**
